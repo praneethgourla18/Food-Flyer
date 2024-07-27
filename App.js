@@ -9,7 +9,10 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-const heading = (<div id="parent">
+
+//React element
+const Heading = ()=>  (<div id="parent">
+    
     <div id="child1">
         <h1 id="heading1">Hello this is heading 1</h1>
     </div>
@@ -18,5 +21,27 @@ const heading = (<div id="parent">
  
    </div>
    </div>)
+
+//    console.log(heading);
+
+
+   //react component
+      //class based components
+      //function based component
+
+     
+      //component composition
+      const HeadingComponent = () =>(
+          <div>
+            {Heading()}
+            
+            <h1>Hii im praneeth</h1>
+          </div>
+        )
+      
+        
+    
+      
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeadingComponent/>);
