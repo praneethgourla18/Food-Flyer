@@ -5,7 +5,7 @@ import initialRestaurants from "../../utils/mockData";
 import { useState } from "react";
 
 const Body=()=>{
-    let [restaurants, setRestaurants] = useState(initialRestaurants);
+    const [restaurants, setRestaurants] = useState(initialRestaurants);
 
     return (
         <div id="body">
@@ -13,7 +13,7 @@ const Body=()=>{
                
                 <button id="ratingfilter" onClick={()=>{
                     const filtered=restaurants.filter(res=>res.info.avgRating>4);
-                    restaurants=setRestaurants(filtered);
+                    setRestaurants(filtered);
                 }} >
                     Filter By Rating
                 </button>
