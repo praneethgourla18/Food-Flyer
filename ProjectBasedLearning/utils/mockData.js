@@ -15,7 +15,7 @@ const restaurants=[
           "Fast Food",
           "Desserts"
         ],
-        "avgRating": 4.2,
+        "avgRating": 3.9,
         "parentId": "395453",
         "avgRatingString": "4.2",
         "totalRatingsString": "100+",
@@ -101,7 +101,7 @@ const restaurants=[
         "cuisines": [
           "North Indian"
         ],
-        "avgRating": 4.2,
+        "avgRating": 3.5,
         "parentId": "376324",
         "avgRatingString": "4.2",
         "totalRatingsString": "100+",
@@ -864,7 +864,7 @@ const restaurants=[
           "Pizzas",
           "Beverages"
         ],
-        "avgRating": 4.3,
+        "avgRating": 3.7,
         "veg": true,
         "parentId": "428968",
         "avgRatingString": "4.3",
@@ -950,7 +950,7 @@ const restaurants=[
           "Momos",
           "Chinese"
         ],
-        "avgRating": 4.1,
+        "avgRating": 2.7,
         "veg": true,
         "parentId": "129345",
         "avgRatingString": "4.1",
@@ -1411,7 +1411,7 @@ const restaurants=[
           "South Indian",
           "Chinese"
         ],
-        "avgRating": 4.3,
+        "avgRating": 3.9,
         "veg": true,
         "parentId": "177443",
         "avgRatingString": "4.3",
