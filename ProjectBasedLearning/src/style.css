@@ -58,3 +58,12 @@
     height: 38%;
     object-fit: fill;
 }
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    z-index: 1000;
+    padding: 20px;
+}  
