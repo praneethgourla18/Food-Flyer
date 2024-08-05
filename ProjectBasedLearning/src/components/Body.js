@@ -1,6 +1,6 @@
 import ResCard from "./ResCard";
 
-
+import Shimmer from "./Shimmer";
 
 import { useState ,useEffect  } from "react";
 
@@ -21,14 +21,7 @@ const Body=()=>{
 
       if(restaurants.length===0){
        return(
-        <div id="loading">
-          <img 
-          src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" 
-          alt="Loading..."
-          width="480"
-          height="480"
-        />
-      </div>
+       <Shimmer/>
         );
       }
     return (
