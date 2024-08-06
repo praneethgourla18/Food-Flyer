@@ -31,11 +31,15 @@
     flex-wrap: wrap;
 }
 #filter-btn{
-    margin-left: 26px;
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    /* align-items: center;    Vertical center */
+    /* height: 100vh;  */
     
 }
 
 #ratingfilter{
+    margin-top: 20px;
     padding: 8px;
     cursor: pointer;
     background-color:  rgb(225, 244, 247);
@@ -106,3 +110,31 @@
     border: none;
     border-radius: 5px;
 }
+.search{
+    
+    padding: 20px;
+}
+.searchBar{
+    width: 300px; 
+    height: 50px; 
+    font-size: 16px; 
+    padding: 10px; 
+    border: 2px solid rgb(225, 244, 247); 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+  }
+  .searchBtn{
+    /* width: 30px; */
+    height: 50px; 
+    font-size: 16px; 
+    padding: 10px; 
+    border: 2px solid rgb(225, 244, 247); 
+    border-radius: 5px; 
+    box-sizing: border-box;
+    background-color: rgb(225, 244, 247) ;
+  }
+  .searchBtn:hover{
+    background-color:orange;
+    border: 2px solid orange;
+    color: white;
+  }
