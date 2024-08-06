@@ -38,6 +38,10 @@
 #ratingfilter{
     padding: 8px;
     cursor: pointer;
+    background-color:  rgb(225, 244, 247);
+    color: black;
+    border: none;
+    border-radius: 5px;
 }
 #card{
     width: 200px;
@@ -92,4 +96,13 @@
     padding: 8px;
     background-color: rgb(225, 244, 247);
    
+}
+.login{
+    /* margin-top: 20px; */
+    padding: 7px;
+    cursor: pointer;
+    background-color: rgb(225, 244, 247);
+    color: black;
+    border: none;
+    border-radius: 5px;
 }
