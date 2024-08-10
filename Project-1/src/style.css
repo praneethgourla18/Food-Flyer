@@ -55,6 +55,7 @@
     margin: 30px;
     text-align: center;
     background-color: rgb(225, 244, 247);
+    border-radius: 5px;
     
 }
 #card:hover{
@@ -90,6 +91,7 @@
     display: flex;
     flex-wrap: wrap;
     animation: shim 2s infinite;
+    border-radius: 5px;
 }
 
 .buttonShim{
