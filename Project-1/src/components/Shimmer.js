@@ -1,4 +1,5 @@
 const Shimmer= () => {
+   // console.log("Not fetched")
    return(
      <div className="shim"> 
         <div className="buttonShim"></div>
