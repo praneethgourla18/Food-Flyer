@@ -10,10 +10,10 @@ const ResCard =(props)=>{
        
         <img className="fooditem" src={IMG_URL+cloudinaryImageId}/>
         <h2>{name}</h2>
-        <p>{cuisines[0]}</p>
+        <p>{cuisines.join(", ")}</p>
         <p>Rating : {avgRating}</p>
         <p>Cost for Two : {costForTwo}</p>  
-        <button>Order Now</button>
+        
     </div>
 )
 }
