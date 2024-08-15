@@ -40,9 +40,17 @@ const Body=()=>{
                         const newSearchText = e.target.value;
                         setSearchText(newSearchText);
 
-                         const filteredR=restaurants.filter((res)=>res.info.name.toLowerCase().includes(newSearchText.toLowerCase()) || res.info.cuisines[0].toLowerCase().includes(newSearchText.toLowerCase()))
+                         const filteredR = restaurants.filter((res) => {
+                             const nameMatches = res.info.name.toLowerCase().includes(newSearchText.toLowerCase());
 
-                        setFilteredRestaurants(filteredR);
+                             const cuisinesMatch = res.info.cuisines.some((cuisine) => 
+                                 cuisine.toLowerCase().includes(newSearchText.toLowerCase())
+                             );
+
+                             return nameMatches || cuisinesMatch;
+                         });
+
+                         setFilteredRestaurants(filteredR);
                          console.log(newSearchText);
                      }} />
                     <button className="searchBtn" onClick={
