@@ -56,11 +56,12 @@
     text-align: center;
     background-color: rgb(225, 244, 247);
     border-radius: 5px;
-    text-decoration: none;
+    text-decoration:none;
 }
 #card:hover{
     border: 1px solid black;
     cursor: pointer;
+    
 }
 .fooditem{
     width: 100%;
@@ -140,3 +141,10 @@
     border: 2px solid orange;
     color: white;
   }
+a{
+    text-decoration: none;
+    /* color: black; */
+}
+a:hover{
+    color: black;
+}

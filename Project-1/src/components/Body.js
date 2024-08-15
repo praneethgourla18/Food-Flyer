@@ -49,13 +49,15 @@ const Body=()=>{
 
                              return nameMatches || cuisinesMatch;
                          });
-
-                         setFilteredRestaurants(filteredR);
+                         
+                            setFilteredRestaurants(filteredR);
+                         
                          console.log(newSearchText);
                      }} />
                     <button className="searchBtn" onClick={
                         ()=>{
-                            setSearchText("");
+                            setSearchText("")
+                            setFilteredRestaurants(restaurants);
                             // setRestaurants(restaurants);
                         }
                     }>Clear</button>
