@@ -6,6 +6,8 @@ import { useState ,useEffect  } from "react";
 
 import { Link } from "react-router-dom";
 
+import useOnlineStatus from "../../utils/useOnlineStatus"
+
 const Body=()=>{
     const [restaurants, setRestaurants] = useState([]);
 
@@ -23,12 +25,17 @@ const Body=()=>{
     useEffect(() => {
         fetchRestaurants();
       }, []);
+
+     const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false) return <h1> Ohhhh Looks like you are offline! CHeck your internet connection.</h1>
     
 
       if(restaurants.length===0){
        return(
        <Shimmer/>
         );
+          
       }
     return (
         <div id="body">
