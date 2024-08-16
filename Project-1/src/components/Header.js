@@ -16,7 +16,7 @@ const Header=()=>{
         {/* <input type="text" placeholder="Search"/> */}
             <ul id="ul-items">
                 <li>
-                    {onlineStatus ? "✔" : "✖"}
+                    {onlineStatus ? "😊" : "😢"}
                 </li>
                 <li>
                   <Link to="/">Home</Link>
