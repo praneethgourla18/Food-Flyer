@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react by praneeth",
   "scripts": {
-    "start": "parcel Project-1/src/index.html",
+    "start": "parcel src/index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },

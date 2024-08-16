@@ -1,4 +1,4 @@
-import { IMG_URL } from "../../utils/constant";
+import { IMG_URL } from "../utils/constant"
 
 const ResCard =(props)=>{
 

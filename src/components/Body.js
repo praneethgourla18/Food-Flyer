@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard from "./ResCard"
 
 import Shimmer from "./Shimmer";
 
@@ -6,7 +6,7 @@ import { useState ,useEffect  } from "react";
 
 import { Link } from "react-router-dom";
 
-import useOnlineStatus from "../../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body=()=>{
     const [restaurants, setRestaurants] = useState([]);

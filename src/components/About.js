@@ -1,5 +1,5 @@
 // import UserClass from "./User";
-import UserClass from "./UserClass";
+import UserClass from "./UserClass"
 import { Component } from "react";
 
 class About extends Component {
