@@ -34,15 +34,15 @@ const Body=()=>{
       if(restaurants.length===0){
        return(
        <Shimmer/>
-        );
-          
+        );    
       }
+    
     return (
-        <div id="body">
-            <div id="filter-btn">
+        <div >
+            <div className="mt-[110px] mb-[30px]">
 
-                <div className="search">
-                    <input type="search" placeholder=" Search for restaurants and food" className="searchBar" value={searchText}
+                <div className="flex justify-center items-center w-[100%] gap-[2px]">
+                    <input type="search" placeholder=" Search for restaurants and food..." className="w-[30rem] p-3 rounded-[10px]                       border border-black focus:border-amber-500 outline-none" value={searchText}
                      onChange={(e)=>{
                         const newSearchText = e.target.value;
                         setSearchText(newSearchText);
@@ -61,10 +61,10 @@ const Body=()=>{
                          
                          console.log(newSearchText);
                      }} />
-                    <button className="searchBtn" onClick={
+                    <button className="bg-amber-500 p-3 rounded-[10px]" onClick={
                         ()=>{
                             setSearchText("")
-                            setFilteredRestaurants(restaurants);
+                             setFilteredRestaurants(restaurants);
                             // setRestaurants(restaurants);
                         }
                     }>Clear</button>
@@ -78,16 +78,13 @@ const Body=()=>{
                 </button> */}
             </div>
 
-            <div id="allcontent">
+            <div className="flex flex-wrap ml-[80px]">
                 {filteredRestaurants.map((i) => (
                     // <ResCard key={i?.info?.id} resObj={i} />
 
-        <Link
-            key={i?.info?.id}
-            to={"/restaurants/" + i.info.id}
-          >
-            <ResCard resObj={i} />
-          </Link>
+                   <Link key={i?.info?.id} to={"/restaurants/" + i.info.id}>
+                        <ResCard className="p-10" resObj={i} />
+                     </Link>
                 ))}
             </div>
         </div>

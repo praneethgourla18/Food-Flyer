@@ -1,4 +1,4 @@
-import { LOGO_URL } from "../utils/constant"
+import logo from "../utils/images-removebg-preview.png"
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus"
@@ -8,32 +8,32 @@ const Header=()=>{
 
     const onlineStatus = useOnlineStatus();
     return (
-    <div id="header">
-        <img className="logo" alt="logo" src={LOGO_URL}/>
+    <div className="flex justify-between px-5 items-center bg-pink-200 fixed top-0 right-0 left-0 h-[80px] z-50">
+        <img className="w-[90px] py-[4px] pl-[15px]" alt="logo" src={logo}/>
 
        
         <nav id="navbar">
         {/* <input type="text" placeholder="Search"/> */}
-            <ul id="ul-items">
-                <li>
+            <ul className="flex justify-between items-center">
+                {/* <li className="px-5">
                     {onlineStatus ? "😊" : "😢"}
-                </li>
-                <li>
+                </li> */}
+                <li className="px-5">
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+                <li className="px-5">
                   <Link to="/grocery">Grocery Store</Link>
                 </li>
-                <li>
+                <li className="px-5"> 
                     <Link to="/About">About</Link>
                 </li>
-                <li>
+                <li className="px-5"> 
                    <Link to="/Cart" >Cart</Link>
                 </li>
-                <li>
+                <li className="px-5"> 
                   <Link to="/Contact">Contact</Link>
                 </li>
-                <button className="login"
+                <button 
                 onClick={() => {
                          btnNameReact === "Login"
                           ? setBtnNameReact("Logout")
