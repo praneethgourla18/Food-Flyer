@@ -39,10 +39,9 @@ const Body=()=>{
       }
     
     return (
-        <div className=" mt-[110px] mb-[30px]">
-            
-
-                <div className="flex justify-center items-center w-[100%] gap-[5px]">
+        <div className="mt-[0px] ">
+        
+                <div className="flex justify-center items-center w-[100%] gap-[5px] mt-[130px]">
                     < input type="search"
                      placeholder=" Search for restaurants and food..."
                       className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
@@ -81,7 +80,7 @@ const Body=()=>{
                
             </div>
 
-            <div className="flex flex-wrap ml-[80px]">
+            <div className="flex flex-wrap ml-[85px] mt-[30px]">
                 {filteredRestaurants.map((i) => (
                     // <ResCard key={i?.info?.id} resObj={i} />
 
