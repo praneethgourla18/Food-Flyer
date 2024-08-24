@@ -39,13 +39,15 @@ const Body=()=>{
       }
     
     return (
-        <div >
-            <div className=" mt-[110px] mb-[30px]">
+        <div className=" mt-[110px] mb-[30px]">
+            
 
                 <div className="flex justify-center items-center w-[100%] gap-[2px]">
-                    <input type="search" placeholder=" Search for restaurants and food..." className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
+                    < input type="search"
+                     placeholder=" Search for restaurants and food..."
+                      className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
                           
-    value={searchText}
+                    value={searchText}
                      onChange={(e)=>{
                         const newSearchText = e.target.value;
                         setSearchText(newSearchText);
@@ -75,14 +77,8 @@ const Body=()=>{
                           height="44" 
                           src={search_icon}
                           alt="search--v1"/></button>
-                </div>
+                
                
-                {/* <button id="ratingfilter" onClick={()=>{
-                    const filtered=restaurants.filter(res=>res?.info?.avgRating>4);
-                    setFilteredRestaurants(filtered);
-                }} >
-                    Top rated restaurants
-                </button> */}
             </div>
 
             <div className="flex flex-wrap ml-[80px]">
