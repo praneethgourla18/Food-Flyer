@@ -42,7 +42,7 @@ const Body=()=>{
         <div className=" mt-[110px] mb-[30px]">
             
 
-                <div className="flex justify-center items-center w-[100%] gap-[2px]">
+                <div className="flex justify-center items-center w-[100%] gap-[5px]">
                     < input type="search"
                      placeholder=" Search for restaurants and food..."
                       className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
@@ -74,7 +74,7 @@ const Body=()=>{
                         }
                     }><img
                           width="25"
-                          height="44" 
+                          height="47" 
                           src={search_icon}
                           alt="search--v1"/></button>
                 
