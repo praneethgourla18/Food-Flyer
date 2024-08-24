@@ -2,6 +2,7 @@ import ResCard from "./ResCard"
 
 import Shimmer from "./Shimmer";
 
+import search_icon from '../utils/icons8-search-50.png'
 import { useState ,useEffect  } from "react";
 
 import { Link } from "react-router-dom";
@@ -39,10 +40,12 @@ const Body=()=>{
     
     return (
         <div >
-            <div className="mt-[110px] mb-[30px]">
+            <div className=" mt-[110px] mb-[30px]">
 
                 <div className="flex justify-center items-center w-[100%] gap-[2px]">
-                    <input type="search" placeholder=" Search for restaurants and food..." className="w-[30rem] p-3 rounded-[10px]                       border border-black focus:border-amber-500 outline-none" value={searchText}
+                    <input type="search" placeholder=" Search for restaurants and food..." className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
+                          
+    value={searchText}
                      onChange={(e)=>{
                         const newSearchText = e.target.value;
                         setSearchText(newSearchText);
@@ -61,13 +64,17 @@ const Body=()=>{
                          
                          console.log(newSearchText);
                      }} />
-                    <button className="bg-amber-500 p-3 rounded-[10px]" onClick={
+                    <button className="bg-[#252525] hover:bg-[#2F5D6F] text-[#FFF] p-3 rounded-[10px]" onClick={
                         ()=>{
-                            setSearchText("")
-                             setFilteredRestaurants(restaurants);
+                            // setSearchText("")
+                             // setFilteredRestaurants(restaurants);
                             // setRestaurants(restaurants);
                         }
-                    }>Clear</button>
+                    }><img
+                          width="25"
+                          height="44" 
+                          src={search_icon}
+                          alt="search--v1"/></button>
                 </div>
                
                 {/* <button id="ratingfilter" onClick={()=>{
