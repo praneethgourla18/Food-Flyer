@@ -44,7 +44,7 @@ const Body=()=>{
                 <div className="flex justify-center items-center w-[100%] gap-[5px] mt-[130px]">
                     < input type="search"
                      placeholder=" Search for restaurants and food..."
-                      className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-bold  outline-none" 
+                      className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-semibold  outline-none" 
                           
                     value={searchText}
                      onChange={(e)=>{
