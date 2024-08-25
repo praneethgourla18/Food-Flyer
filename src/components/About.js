@@ -16,9 +16,7 @@ class About extends Component {
   render() {
     //console.log("Parent Render");
     return (
-      <div>
-        <h1>Hiii from Praneeth's Kitchen</h1>
-        <h2>We are located in Hyderabad</h2>
+      <div className="mt-[130px]">
         <UserClass  />
       </div>
     );
