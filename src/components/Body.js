@@ -39,12 +39,12 @@ const Body=()=>{
       }
     
     return (
-        <div className="mt-[0px] ">
+        <div className="mt-[130px] px-4 ">
         
-                <div className="flex justify-center items-center w-[100%] gap-[5px] mt-[130px]">
+                <div className="flex justify-center mb-6 gap-3">
                     < input type="search"
                      placeholder=" Search for restaurants and food..."
-                      className="w-[30rem] p-3 rounded-[10px] border border-black  focus:border-amber-500 focus:text-[#252525]  font-semibold  outline-none" 
+                      className="w-[30rem] p-3 rounded-[10px] border border-black focus:border-amber-500 focus:text-[#252525] font-semibold outline-none" 
                           
                     value={searchText}
                      onChange={(e)=>{
@@ -80,9 +80,8 @@ const Body=()=>{
                
             </div>
 
-            <div className="flex flex-wrap ml-[85px] mt-[30px]">
+            <div className="flex flex-wrap ml-[85px] mt-[30px] gap-6">
                 {filteredRestaurants.map((i) => (
-                    // <ResCard key={i?.info?.id} resObj={i} />
 
                    <Link key={i?.info?.id} to={"/restaurants/" + i.info.id}>
                         <ResCard resObj={i} />
