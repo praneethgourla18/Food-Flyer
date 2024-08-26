@@ -85,7 +85,7 @@ const Body=()=>{
                     // <ResCard key={i?.info?.id} resObj={i} />
 
                    <Link key={i?.info?.id} to={"/restaurants/" + i.info.id}>
-                        <ResCard className="p-10" resObj={i} />
+                        <ResCard resObj={i} />
                      </Link>
                 ))}
             </div>
