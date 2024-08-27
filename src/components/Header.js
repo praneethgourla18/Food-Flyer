@@ -20,16 +20,16 @@ const Header=()=>{
                 {/* <li className="px-3">
                     {onlineStatus ? "😊" : "😢"}
                 </li> */}
-                <li className="px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
+                <li className="px-3 py-2 bg-[#fff] font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
+                <li className="px-3 py-2 bg-[#fff] font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
                   <Link to="/grocery">Grocery</Link>
                 </li>
-                <li className="px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] "> 
+                <li className="px-3 py-2 bg-[#fff] font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] "> 
                     <Link to="/About">About</Link>
                 </li>
-                <li className="px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] group">
+                <li className="px-3 py-2 bg-[#fff] font-semibold rounded-[10px] hover:bg-[#2F5D6F] group">
                   <Link to="/Cart" className="flex items-center">
                     <img
                       width="25px"
@@ -41,17 +41,6 @@ const Header=()=>{
                   </Link>
                 </li>
 
-                <li className="px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] group"> 
-                  <Link to="/Contact">
-                      <img 
-                          width="25px" 
-                          height="40px" 
-                          src="https://img.icons8.com/ios-glyphs/30/phone-bubble.png"
-                          alt="phone-bubble"
-                          className="group-hover:invert group-hover:brightness-0 transition-all duration-200"
-                     />
-                  </Link>
-                </li>
                 <button className="px-3 py-2 bg-[#fff] font-bold rounded-[10px]"
                 onClick={() => {
                          btnNameReact === "Login"
