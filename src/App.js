@@ -17,6 +17,7 @@ const AppComponent = () => (
     <div>
      <Header/>     
      <Outlet/>
+     <Footer/>
     </div>
 );
 

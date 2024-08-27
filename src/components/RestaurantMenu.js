@@ -25,7 +25,7 @@ const RestaurantMenu = () => {
   if (resInfo == null) {
     return <ResMenuShimmer/>;
   }
-
+ 
   const { name, cuisines, costForTwoMessage, avgRating, sla, cloudinaryImageId } =
     resInfo?.cards?.[2]?.card?.card?.info || {};
 
@@ -35,6 +35,8 @@ const RestaurantMenu = () => {
   const itemCards = regularCards.filter(
     (card) => card.card.card["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
+
+  console.log(itemCards)
 
   const toggleSection = (index) => {
     setOpenSectionIndex(openSectionIndex === index ? null : index);
@@ -89,13 +91,13 @@ const RestaurantMenu = () => {
           {openSectionIndex === index && (
             <div className="mt-2">
               {c.card.card.itemCards?.map((item, idx) => {
-                const { name, price ,imageId ,description } = item.card.info || {};
+                const { name, price ,imageId ,description ,defaultPrice } = item.card.info || {};
 
                 return (
                   <div key={idx} className="border-b border-gray-200 py-2 flex justify-between">
                     <div>
                       <h2 className="font-semibold">{name}</h2>
-                      <p className="text-gray-600">₹{price ? price / 100 : 0}</p>
+                      <p className="text-gray-600">₹{price ? price / 100 : defaultPrice / 100}</p>
                       {/* <p className="text-gray-700">{description}</p> */}
                     </div>
                     <div className="relative" >
