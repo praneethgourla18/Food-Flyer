@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer"
 import Error from "./components/Error";
 import Cart from "./components/Cart"
-import RestaurantMenu from "./components/Restaurantmenu"
+import RestaurantMenu from "./components/RestaurantMenu"
 import {createBrowserRouter, RouterProvider , Outlet} from "react-router-dom"
 
 
