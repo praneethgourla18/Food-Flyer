@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "react by praneeth",
   "scripts": {
-    "start": "parcel src/index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
