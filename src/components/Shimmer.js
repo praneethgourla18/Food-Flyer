@@ -1,6 +1,6 @@
 import ResCardShimmer from "./ResCardShimmer";
 import search_icon from '../utils/icons8-search-50.png';
-
+import Footer from "./Footer"
 const Shimmer = () => {
   return (
     <div className="mt-[130px] px-4">
@@ -24,6 +24,7 @@ const Shimmer = () => {
           <ResCardShimmer key={index} />
         ))}
       </div>
+    <Footer/>
     </div>
   );
 };

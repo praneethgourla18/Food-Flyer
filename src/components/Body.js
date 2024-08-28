@@ -4,6 +4,7 @@ import search_icon from '../utils/icons8-search-50.png';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Footer from "./Footer"
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -11,7 +12,7 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     const fetchRestaurants = async () => {
-        const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4875418&lng=78.3953462&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+        const response = await fetch('https://food-flyer-server.vercel.app/restaurants');
         const data = await response.json();
         const fetchedRestaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
         setRestaurants(fetchedRestaurants);
@@ -79,6 +80,7 @@ const Body = () => {
                     <div className="text-center w-full">No restaurants found.</div>
                 )}
             </div>
+            <Footer/>
         </div>
     );
 }

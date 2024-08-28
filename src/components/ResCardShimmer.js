@@ -1,6 +1,6 @@
 const ResCardShimmer = () => {
   return (
-    <div className="w-[240px] rounded-[10px] p-[10px] m-[18px] bg-[#FFF] shadow-lg border border-gray-200 ">
+    <div className="w-[300px] md:w-[240px] rounded-[10px] p-[10px] m-[18px] bg-[#FFF] shadow-lg border border-gray-200 ">
       {/* Image Placeholder */}
       <div className="w-[100%] h-[180px] bg-gray-300 rounded-[10px] animate-pulse"></div>
 
