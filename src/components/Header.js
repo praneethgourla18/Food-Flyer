@@ -15,8 +15,8 @@ const Header = () => {
 
     return (
         <div >
-            <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50 md:h-[80px] px-5">
-                <img className="w-[100px] h-[80px] md:w-[190px]" alt="logo" src={logo} />
+            <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
+                <img className="w-[130px] h-[80px] md:w-[190px]" alt="logo" src={logo} />
 
                 <nav id="navbar" className='hidden md:flex'>
                     <ul className="flex items-center space-x-3 text-slate-700 md:text-slate-800">
