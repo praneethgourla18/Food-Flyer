@@ -1,94 +1,86 @@
-import ResCard from "./ResCard"
-
+import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
-
-import search_icon from '../utils/icons8-search-50.png'
-import { useState ,useEffect  } from "react";
-
+import search_icon from '../utils/icons8-search-50.png';
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
-import useOnlineStatus from "../utils/useOnlineStatus"
-
-const Body=()=>{
+const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
-
-    const [filteredRestaurants,setFilteredRestaurants]=useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     const fetchRestaurants = async () => {
         const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4875418&lng=78.3953462&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         const data = await response.json();
-        console.log(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setRestaurants(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      };
-    
+        const fetchedRestaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+        setRestaurants(fetchedRestaurants);
+        setFilteredRestaurants(fetchedRestaurants);
+    };
+
     useEffect(() => {
         fetchRestaurants();
-      }, []);
+    }, []);
 
-     const onlineStatus = useOnlineStatus();
+    const onlineStatus = useOnlineStatus();
 
-    if(onlineStatus === false) return <h1> Ohhhh Looks like you are offline! CHeck your internet connection.</h1>
-    
+    if (onlineStatus === false) {
+        return <h1 className="text-center mt-6">Ohhhh, Looks like you are offline! Check your internet connection.</h1>;
+    }
 
-      if(restaurants.length===0){
-       return(
-       <Shimmer/>
-        );    
-      }
-    
+    if (restaurants.length === 0) {
+        return <Shimmer />;
+    }
+
     return (
-        <div className="mt-[130px] px-4 ">
-        
-                <div className="flex justify-center mb-6 gap-3">
-                    < input type="search"
-                     placeholder=" Search for restaurants and food..."
-                      className="w-[30rem] p-3 rounded-[10px] border border-black focus:border-amber-500 focus:text-[#252525] font-semibold outline-none" 
-                          
-                    value={searchText}
-                     onChange={(e)=>{
-                        const newSearchText = e.target.value;
-                        setSearchText(newSearchText);
+        <div className="mt-[130px] px-4">
+            <div className="flex flex-col items-center mb-6 gap-3">
+                <div className="relative w-full max-w-xs">
+                    <input
+                        type="search"
+                        placeholder="Search for restaurants and food..."
+                        className="w-full p-3 rounded-[10px] border border-black focus:border-amber-500 focus:text-[#252525] font-semibold outline-none"
+                        value={searchText}
+                        onChange={(e) => {
+                            const newSearchText = e.target.value;
+                            setSearchText(newSearchText);
 
-                         const filteredR = restaurants.filter((res) => {
-                             const nameMatches = res.info.name.toLowerCase().includes(newSearchText.toLowerCase());
+                            const filteredR = restaurants.filter((res) => {
+                                const nameMatches = res.info.name.toLowerCase().includes(newSearchText.toLowerCase());
+                                const cuisinesMatch = res.info.cuisines.some((cuisine) =>
+                                    cuisine.toLowerCase().includes(newSearchText.toLowerCase())
+                                );
 
-                             const cuisinesMatch = res.info.cuisines.some((cuisine) => 
-                                 cuisine.toLowerCase().includes(newSearchText.toLowerCase())
-                             );
+                                return nameMatches || cuisinesMatch;
+                            });
 
-                             return nameMatches || cuisinesMatch;
-                         });
-                         
                             setFilteredRestaurants(filteredR);
-                         
-                         console.log(newSearchText);
-                     }} />
-                    <button className="bg-[#252525] hover:bg-[#2F5D6F] text-[#FFF] p-3 rounded-[10px]" onClick={
-                        ()=>{
-                            // setSearchText("")
-                             // setFilteredRestaurants(restaurants);
-                            // setRestaurants(restaurants);
-                        }
-                    }><img
-                          width="25"
-                          height="47" 
-                          src={search_icon}
-                          alt="search--v1"/></button>
-                
-               
+                        }}
+                    />
+                    <button className="absolute right-0 top-0 mt-2 mr-2 bg-[#252525] hover:bg-[#2F5D6F] text-[#FFF] p-2 rounded-full">
+                        <img
+                            width="20"
+                            height="20"
+                            src={search_icon}
+                            alt="search"
+                        />
+                    </button>
+                </div>
             </div>
 
-            <div className="flex flex-wrap ml-[85px] mt-[30px] gap-6">
-                {filteredRestaurants.map((i) => (
-
-                   <Link key={i?.info?.id} to={"/restaurants/" + i.info.id}>
-                        <ResCard resObj={i} />
-                     </Link>
-                ))}
+            <div className="flex flex-wrap justify-center gap-4">
+                {filteredRestaurants.length > 0 ? (
+                    filteredRestaurants.map((i) => (
+                        <Link key={i?.info?.id} to={`/restaurants/${i.info.id}`}>
+                            <ResCard resObj={i} />
+                        </Link>
+                    ))
+                ) : (
+                    <div className="text-center w-full">No restaurants found.</div>
+                )}
             </div>
         </div>
     );
 }
+
 export default Body;
