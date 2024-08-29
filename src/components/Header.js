@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../utils/images-removebg-preview.png";
-import login_img from '../utils/icons8-import-26.png';
-import logout_img from '../utils/icons8-logout-32.png';
 import menu_icon from '../utils/menu_icon.png';
 import menu_close from '../utils/menu_close.png';
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -33,26 +31,14 @@ const Header = () => {
                             <Link to="/Cart">Cart</Link>
                         </li>
                         <button
-                            className="ml-4 px-3 py-2 bg-[#fff] font-bold rounded-[10px] flex items-center justify-center"
+                            className="ml-4 px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] flex items-center justify-center"
                             onClick={() => setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")}
                             aria-label={btnNameReact === "Login" ? "Login button" : "Logout button"}
                         >
                             {btnNameReact === "Login" ? (
-                                <img
-                                    width="25px"
-                                    height="40px"
-                                    src={login_img}
-                                    alt="Login icon"
-                                    className="transition-all duration-200"
-                                />
+                                <h1>Logout</h1>
                             ) : (
-                                <img
-                                    width="25px"
-                                    height="45px"
-                                    src={logout_img}
-                                    alt="Logout icon"
-                                    className="transition-all duration-200"
-                                />
+                               <h1>Login</h1>
                             )}
                         </button>
                     </ul>
@@ -83,7 +69,7 @@ const Header = () => {
                             <Link to="/Cart">Cart</Link>
                         </li>
                         <button 
-                            className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] flex items-center justify-center" 
+                            className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] flex items-center justify-center " 
                             onClick={() => {
                                 setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
                                 setIsMenuOpen(!isMenuOpen);
