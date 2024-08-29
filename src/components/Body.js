@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Footer from "./Footer"
+import EmptyResults from "./EmptyResults"
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -77,7 +78,7 @@ const Body = () => {
                         </Link>
                     ))
                 ) : (
-                    <div className="text-center w-full">No restaurants found.</div>
+                    <EmptyResults/>
                 )}
             </div>
             <Footer/>
