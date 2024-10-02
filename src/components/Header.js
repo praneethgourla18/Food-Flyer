@@ -18,6 +18,10 @@ const Header = () => {
         <div >
             <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
                 <img className="w-[130px] h-[80px] md:w-[190px]" alt="logo" src={logo} />
+                <div className="flex items-center gap-3">
+                <div className="md:hidden px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
+                    <Link to="/Cart">Cart({cartItems.length})</Link>
+                </div>
 
                 <nav id="navbar" className='hidden md:flex'>
                     <ul className="flex items-center space-x-3 text-slate-700 md:text-slate-800">
@@ -46,7 +50,11 @@ const Header = () => {
                         </button>
                     </ul>
                 </nav>
+               
 
+                    
+                    
+                
                 <button
                     className="md:hidden p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -54,6 +62,7 @@ const Header = () => {
                 >
                     <img className='w-[25px]' src={isMenuOpen ? menu_close : menu_icon} alt="Menu icon" />
                 </button>
+                </div>
             </div>
 
             {isMenuOpen && (
@@ -67,9 +76,6 @@ const Header = () => {
                         </li>
                         <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
                             <Link to="/About">About</Link>
-                        </li>
-                        <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700  font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
-                            <Link to="/Cart">Cart({cartItems.length})</Link>
                         </li>
                         <button 
                             className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] flex items-center justify-center " 
