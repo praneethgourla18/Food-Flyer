@@ -135,7 +135,7 @@ const RestaurantMenu = () => {
                             className="w-[100px] h-[100px] object-cover rounded-[10px]"
                             src={IMG_URL + imageId}
                           />
-                          <button className="p-1 w-[50px] rounded-[30px] bg-yellow-300 absolute bottom-0 right-0" onClick={()=>{handleAdditem(c)}}>
+                          <button className="p-1 w-[50px] rounded-[30px] bg-yellow-300 absolute bottom-0 right-0 hover:bg-[#70e000]" onClick={()=>{handleAdditem(c)}}>
                             Add+
                           </button>
                         </div>
