@@ -32,8 +32,8 @@ const Cart = () => {
     <div className="mt-[120px] w-11/12 md:w-5/12 p-5  mx-auto border-2 border-gray-200 rounded-lg">
       <div className=" mb-6 flex justify-between p-2 "> 
         <h1 className="text-xl p-2 md:text-2xl font-bold text-center text-gray-800">Cart</h1>
-        <button className=" bg-white text-white p-2 rounded-lg " onClick={handleClearCart}>
-            <img width="30" height="30" className="hover:bg-red-200 md:hover:bg-white md:hover:scale-125 md:transition-transform md:duration-200" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+        <button className=" bg-white text-white md:p-2 rounded-lg " onClick={handleClearCart}>
+            <img width="30" height="30" className=" md:hover:scale-125 md:transition-transform md:duration-200" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
         </button>
       </div>
       {cartItems.map((item,index)=>{
