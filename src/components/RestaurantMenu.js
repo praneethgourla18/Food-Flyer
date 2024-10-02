@@ -4,11 +4,19 @@ import rating_icon from "../utils/icons8-rating-50.png";
 import { IMG_URL } from "../utils/constant";
 import ResMenuShimmer from "./ResMenuShimmer";
 import Footer from "./Footer"
+import { useDispatch } from "react-redux";
+import {addItems} from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
   const [openSectionIndex, setOpenSectionIndex] = useState(null);
+
+  const dispatch =useDispatch();
+
+  const handleAdditem = (item) => {
+     dispatch(addItems(item));
+  }
 
   const fetchMenu = () => {
     fetch(
@@ -103,7 +111,7 @@ const RestaurantMenu = () => {
               {c.card.card.itemCards?.map((item, idx) => {
                 const { name, price, imageId, description, defaultPrice } =
                   item.card.info || {};
-
+                
                 return (
                   <div
                     key={idx}
@@ -118,7 +126,7 @@ const RestaurantMenu = () => {
                     </div>
                     <div className="relative">
                       {imageId == null ? (
-                        <button className="p-2 w-[50px] rounded-[5px] bg-yellow-300">
+                        <button className="p-2 w-[50px] rounded-[5px] bg-yellow-300" onClick={()=>{handleAdditem(c)}}>
                           Add+
                         </button>
                       ) : (
@@ -127,7 +135,7 @@ const RestaurantMenu = () => {
                             className="w-[100px] h-[100px] object-cover rounded-[10px]"
                             src={IMG_URL + imageId}
                           />
-                          <button className="p-1 w-[50px] rounded-[30px] bg-yellow-300 absolute bottom-0 right-0">
+                          <button className="p-1 w-[50px] rounded-[30px] bg-yellow-300 absolute bottom-0 right-0" onClick={()=>{handleAdditem(c)}}>
                             Add+
                           </button>
                         </div>

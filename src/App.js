@@ -10,15 +10,20 @@ import Cart from "./components/Cart"
 import RestaurantMenu from "./components/RestaurantMenu"
 import {createBrowserRouter, RouterProvider , Outlet} from "react-router-dom"
 
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore";
+
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppComponent = () => (
-    <div>
-     <Header/>     
-     <Outlet/>
+   <Provider store={appStore} >
+         <div>
+         <Header/>     
+         <Outlet/>
     
-    </div>
+        </div>
+  </Provider>
 );
 
 const appRouter = createBrowserRouter([

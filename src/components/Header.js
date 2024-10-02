@@ -4,6 +4,7 @@ import logo from "../utils/images-removebg-preview.png";
 import menu_icon from '../utils/menu_icon.png';
 import menu_close from '../utils/menu_close.png';
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -11,6 +12,8 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
 
+    const cartItems=useSelector((store)=>store.cart.items);
+    
     return (
         <div >
             <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
@@ -28,7 +31,7 @@ const Header = () => {
                             <Link to="/About">About</Link>
                         </li>
                         <li className="px-3 py-2 bg-[#fff] font-medium md:font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
-                            <Link to="/Cart">Cart</Link>
+                            <Link to="/Cart">Cart({cartItems.length})</Link>
                         </li>
                         <button
                             className="ml-4 px-3 py-2 bg-[#fff] font-bold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] flex items-center justify-center"
