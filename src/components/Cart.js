@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { IMG_URL } from "../utils/constant";
 import { clearCart } from "../utils/cartSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
-
+  
   const [coupon,setCoupon]=useState(false);
   const [couponVal,setCouponVal]=useState("");
-  const [total,setTotal]=useState(600);
+  
+  const [total,setTotal]=useState(0);
+  
   const[clicked,setclicked]=useState(false);
   const changeTotal =()=>{
 
@@ -20,7 +21,6 @@ const Cart = () => {
     }
     else{
       setclicked(false);
-      setTotal(600);
     } 
   }
 
@@ -29,6 +29,20 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+  useEffect(()=>{
+    let newTotal = 0;
+    cartItems.forEach((item, index) => {
+      const { price, defaultPrice } = item?.card?.card?.itemCards[index]?.card?.info || {};
+      newTotal += price ? price/100 : defaultPrice/100;
+    })
+     if (clicked && couponVal === "HireMe") {
+            setTotal(0); // Setting total to 0 for "HireMe" coupon
+     } else {
+      setTotal(newTotal);
+    }
+  
+  },[cartItems])
 
   if (cartItems.length === 0) {
     return (
@@ -67,6 +81,9 @@ const Cart = () => {
         {cartItems.map((item, index) => {
           const { name, price, imageId, defaultPrice } =
             item?.card?.card?.itemCards[index]?.card?.info;
+
+          
+        
           return (
             <div>
               <div
@@ -81,6 +98,8 @@ const Cart = () => {
                   <h2 className="font-semibold">{name}</h2>
                   <p className="text-gray-600">
                     ₹{price ? price / 100 : defaultPrice / 100}
+                    
+                   
                   </p>
                 </div>
                 <div className="relative">
@@ -109,11 +128,11 @@ const Cart = () => {
         <h1 className="text-lg font-semibold text-gray-700 px-4 mb-2 border-b border-gray-200">Bill Details</h1>
         <div className="flex justify-between text-md text-gray-800 mb-2 px-4">
           <h1 className="font-semibold">Value</h1>
-          <h1>600 ₹</h1>
+          <h1>{total} ₹</h1>
         </div>
         <div className="flex justify-between px-4 mb-2 text-md text-gray-800">
           <h1 className="font-semibold">Delivery fee</h1>
-          <h1>60 ₹</h1>
+          <h1>{(total!=0)?"60":"0"} ₹</h1>
         </div>
         <div className="px-4 font-xl text-md font-semibold text-gray-700 mb-2">
           <button onClick={()=>setCoupon(!coupon)} className={clicked?" font-xl text-md font-semibold text-green-500 mb-2":"font-xl text-md font-semibold text-gray-700 mb-2"}>{clicked?"Applied succesfully!":"Apply coupon?"}</button>
@@ -126,7 +145,7 @@ const Cart = () => {
         </div>
         <div className="flex justify-between px-4 mb-2 text-md text-gray-800">
           <h1 className="font-semibold">Total</h1>
-          <h1>{total} ₹</h1>
+          <h1>{(total!=0)?total+60:total} ₹</h1>
         </div>
         <div>
           <button 
@@ -141,6 +160,6 @@ const Cart = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Cart;
