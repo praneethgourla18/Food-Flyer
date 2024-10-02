@@ -69,7 +69,7 @@ const Header = () => {
                             <Link to="/About">About</Link>
                         </li>
                         <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700  font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
-                            <Link to="/Cart">Cart</Link>
+                            <Link to="/Cart">Cart({cartItems.length})</Link>
                         </li>
                         <button 
                             className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff] flex items-center justify-center " 
