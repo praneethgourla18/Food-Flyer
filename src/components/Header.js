@@ -19,8 +19,13 @@ const Header = () => {
             <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
                 <img className="w-[130px] h-[80px] md:w-[190px]" alt="logo" src={logo} />
                 <div className="flex items-center gap-3">
-                <div className="md:hidden px-3 py-2 text-gray-700 font-semibold rounded-[10px] hover:bg-[#2F5D6F] hover:text-[#fff]">
-                    <Link to="/Cart">Cart({cartItems.length})</Link>
+                <div className="md:hidden relative px-3 py-2 ">
+                    {/* <Link to="/Cart">Ca rt({cartItems.length})</Link> */}
+                    <Link to="/Cart">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/shopping-bag.png" alt="shopping-bag"/>
+                    
+                    </Link>
+                    <h1 className="absolute p-1  text-sm font-semibold text-white top-4 right-[18px]">{cartItems.length}</h1>
                 </div>
 
                 <nav id="navbar" className='hidden md:flex'>
