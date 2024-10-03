@@ -65,7 +65,7 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Menu"
                 >
-                    <img className='w-[25px]' src={isMenuOpen ? menu_close : menu_icon} alt="Menu icon" />
+                   <img width="32" height="32" src="https://img.icons8.com/material-outlined/32/user-male-circle.png" alt="user-male-circle"/>
                 </button>
                 </div>
             </div>
