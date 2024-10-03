@@ -13,19 +13,19 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     const cartItems=useSelector((store)=>store.cart.items);
-    
+
     return (
         <div >
             <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
                 <img className="w-[130px] h-[80px] md:w-[190px]" alt="logo" src={logo} />
                 <div className="flex items-center gap-3">
-                <div className="md:hidden relative">
+                <div className="md:hidden relative px-3 py-2 ">
                     {/* <Link to="/Cart">Ca rt({cartItems.length})</Link> */}
                     <Link to="/Cart">
-                        <img width="28" height="28" src="https://img.icons8.com/fluency-systems-regular/28/shopping-bag--v1.png" alt="shopping-bag--v1"/>
-                    
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/shopping-bag.png" alt="shopping-bag"/>
+
                     </Link>
-                    <h1 className={(cartItems.length<=9)?"absolute p-1  text-sm font-semibold text-black top-[1px] right-1.5":"absolute p-1  text-sm font-semibold text-black top-[1px] right-[2.7px] overflow-hidden"}>{cartItems.length}</h1>
+                    <h1 className={(cartItems.length<=9)?"absolute p-1  text-sm font-semibold text-white top-4 right-[18.5px]":"absolute p-1  text-sm font-semibold text-white top-4 right-[15.5px]"}>{cartItems.length}</h1>
                 </div>
 
                 <nav id="navbar" className='hidden md:flex'>
@@ -55,17 +55,17 @@ const Header = () => {
                         </button>
                     </ul>
                 </nav>
-               
 
-                    
-                    
-                
+
+
+
+
                 <button
                     className="md:hidden p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Menu"
                 >
-                    <img width="30" height="30" src="https://img.icons8.com/material-outlined/30/user-male-circle.png" alt="user-male-circle"/>
+                    <img className='w-[25px]' src={isMenuOpen ? menu_close : menu_icon} alt="Menu icon" />
                 </button>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const Header = () => {
                                 setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
                                 setIsMenuOpen(!isMenuOpen);
                               }}
-                           
+
                         >
                             <h1>{btnNameReact}</h1>
                         </button>
