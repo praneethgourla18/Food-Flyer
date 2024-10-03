@@ -138,7 +138,7 @@ const Cart = () => {
           <button onClick={()=>setCoupon(!coupon)} className={clicked?" font-xl text-md font-semibold text-green-500 mb-2":"font-xl text-md font-semibold text-gray-700 mb-2"}>{clicked?"Applied succesfully!":"Apply coupon?"}</button>
           {coupon && <div className="m-2 flex gap-2">
             
-             <input type="text" placeholder="Apply HireMe to get 100% off" className="rounded-lg  p-2 border focus:border-gray-200"  onChange={(e)=>setCouponVal(e.target .value)} value={couponVal} clear/>
+             <input type="text" placeholder="Apply HireMe to get 100% off" className="rounded-lg  p-2 border focus:border-gray-200 text-sm"  onChange={(e)=>setCouponVal(e.target .value)} value={couponVal} clear/>
             
              <button className="p-2 bg-yellow-300 rounded-lg hover:bg-green-400 transition duration-200" onClick={changeTotal}>{clicked?"Applied":"Apply"}</button>
           </div>}
