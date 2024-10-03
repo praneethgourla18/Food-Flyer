@@ -25,7 +25,7 @@ const Header = () => {
                         <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/shopping-bag.png" alt="shopping-bag"/>
                     
                     </Link>
-                    <h1 className="absolute p-1  text-sm font-semibold text-white top-4 right-[18px]">{cartItems.length}</h1>
+                    <h1 className={(cartItems.length<=9)?"absolute p-1  text-sm font-semibold text-white top-4 right-[18.5px]":"absolute p-1  text-sm font-semibold text-white top-4 right-[15.5px]"}>{cartItems.length}</h1>
                 </div>
 
                 <nav id="navbar" className='hidden md:flex'>
