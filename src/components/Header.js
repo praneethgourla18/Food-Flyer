@@ -25,7 +25,7 @@ const Header = () => {
                         <img width="28" height="28" src="https://img.icons8.com/fluency-systems-regular/28/shopping-bag--v1.png" alt="shopping-bag--v1"/>
                     
                     </Link>
-                    <h1 className={(cartItems.length<=9)?"absolute p-1  text-sm font-semibold text-black top-[1px] right-1.5":"absolute p-1  text-sm font-semibold text-black top-[1px] right-[2.25px] overflow-hidden"}>{cartItems.length}</h1>
+                    <h1 className={(cartItems.length<=9)?"absolute p-1  text-sm font-semibold text-black top-[1px] right-1.5":"absolute p-1  text-sm font-semibold text-black top-[1px] right-[2.7px] overflow-hidden"}>{cartItems.length}</h1>
                 </div>
 
                 <nav id="navbar" className='hidden md:flex'>
