@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About"
 import Contact from "./components/Contact";
+import Login from "./components/Login"
+import Logout from "./components/Logout"
+
 
 import Error from "./components/Error";
 import Cart from "./components/Cart"
@@ -48,6 +51,15 @@ const appRouter = createBrowserRouter([
                      path:"Cart",
                     element:<Cart />,
                  },
+
+                {
+                     path:"Login",
+                    element:<Login/>,
+                 },
+            {
+                 path:"Logout",
+                element:<Logout/>,
+             },
                 
                  {
                  path:"Grocery",
