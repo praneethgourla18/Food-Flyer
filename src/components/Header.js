@@ -24,7 +24,7 @@ const Header = () => {
                         <Link to="/Cart" className="relative group">
                             <img width="25" height="25" src="https://img.icons8.com/ios/25/shopping-bag--v1.png" alt="shopping-bag--v1" />
                             {/* Cart items length with the gold theme */}
-                            <span className={`absolute -top-3 ${cartItems.length <= 9 ? '-right-3' : '-right-4'} bg-[#d4af37] text-white text-xs font-bold rounded-full px-1.5 py-0.5 border-2 border-white`}>
+                            <span className={`absolute top-3 ${cartItems.length <= 9 ? 'right-3' : 'right-4'} bg-[#d4af37] text-white text-xs font-bold rounded-full px-1.5 py-0.5 border-2 border-white`}>
                                 {cartItems.length > 9 ? "9+" : cartItems.length}
                             </span>
                         </Link>
