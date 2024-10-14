@@ -20,7 +20,13 @@ const Header = () => {
             <div className="flex justify-between items-center bg-[#FFF] shadow-md fixed top-0 right-0 left-0 z-50  md:h-[80px] px-5">
                 <img className="w-[130px] h-[80px] md:w-[190px] relative" alt="logo" src={logo} />
                 <div className="flex items-center md:gap-3 gap-2">
-                    <div className="md:hidden active:underline">
+
+                    <div className="md:hidden active:underline px-1">
+                        <Link to="/" className="relative group">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/25/home.png" alt="home"/></Link>
+                        </div>
+                    
+                    <div className="md:hidden active:underline px-1">
                         <Link to="/Cart" className="relative group">
                             <img width="25" height="25" src="https://img.icons8.com/ios/25/shopping-bag--v1.png" alt="shopping-bag--v1" />
                             {/* Cart items length with the gold theme */}
@@ -84,14 +90,16 @@ const Header = () => {
             {isMenuOpen && (
                 <aside className="fixed top-[80px] right-0 w-[130px] bg-[#FFF] shadow-lg md:hidden z-50 transition-transform transform -translate-x-0 pb-2">
                     <ul className="flex flex-col items-center space-y-2">
-                        <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
-                          <Link to="/">Home</Link>
-                        </li>
+                       
 
 
 
                         <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
                           <Link to="/Grocery">Grocery</Link>
+                        </li>
+
+                        <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
+                          <h1>Orders</h1>
                         </li>
 
                         <li onClick={() => setIsMenuOpen(!isMenuOpen)} className="px-3 py-2 text-gray-700 font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
