@@ -40,7 +40,7 @@ const User = () => {
           <p className="text-sm md:text-md text-gray-500 mt-1 text-center md:text-left">{location}</p>
           <div className="flex justify-center md:justify-start gap-[10px] mt-[20px]">
             <a
-              href="https://www.linkedin.com/in/praneethgourla/"
+              href="www.linkedin.com/in/nandhakishorpalla"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -52,32 +52,8 @@ const User = () => {
                 alt="linkedin"
               />
             </a>
-            <a
-              href="https://github.com/praneethgourla18"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                width="30"
-                height="30"
-                className="hover:scale-125 transition-transform duration-200"
-                src="https://img.icons8.com/ios-glyphs/30/github.png"
-                alt="github"
-              />
-            </a>
-            <a
-              href="https://twitter.com/Praneeeethh"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                width="30"
-                height="50"
-                className="hover:scale-125 transition-transform duration-200"
-                src="https://img.icons8.com/ios-filled/50/twitterx--v1.png"
-                alt="twitterx--v1"
-              />
-            </a>
+            
+    
           </div>
         </div>
       </div>
