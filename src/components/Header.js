@@ -46,9 +46,7 @@ const Header = () => {
                         <li className="px-3 py-2 bg-[#fff] font-medium md:font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
                           <Link to="/Grocery">Grocery</Link>
                         </li>
-                        <li className="px-3 py-2 bg-[#fff] font-medium md:font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
-                          <Link to="/About">About</Link>
-                        </li>
+                        
 
                         
                         <li className="px-3 py-2 bg-[#fff] font-medium md:font-semibold rounded-[10px] border border-transparent hover:border-[#d4af37] hover:text-[#d4af37] transition-all duration-300">
